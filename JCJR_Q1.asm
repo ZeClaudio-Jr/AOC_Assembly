@@ -31,7 +31,7 @@ main:
 	li $v0, 5 #Instrucao(li-5) que le o inteiro digitado
 	syscall
 	   	
-	#Como o valor $v0 sera usado depois, para que esse valor nao seja perdido, devera ser movido(salvo) para o registrador temporario $t1(o $t0 j· foi usado).
+	#Como o valor $v0 sera usado depois, para que esse valor nao seja perdido, devera ser movido(salvo) para o registrador temporario $t1(o $t0 j√° foi usado).
 	move $t1, $v0	#$v0 sendo movido para um registrador temporario ($t1)
 	
 	#O resto nesse momento recebera o valor do dividendo(guardado em $t0). O registrador $s0 sera o utilizado para guardar o valor "dividendo".
@@ -49,10 +49,10 @@ main:
 		j while #Aqui acontece o retorno para o inicio do loop
 		
 		
-	exit_while:	#Nessa posicao, o loop eh finalizado
+	exit_while:  #Nessa posicao, o loop eh finalizado
 	
-	li $v0, 4	#Sera impressa na tela uma string
-	la $a0, quociente	#Necessariamente, a string tem que estar no registrador $a0 para a impressao. A string da variavel quociente eh passada para esse registrador
+	li $v0, 4  #Sera impressa na tela uma string
+	la $a0, quociente  #Necessariamente, a string tem que estar no registrador $a0 para a impressao. A string da variavel quociente eh passada para esse registrador
 	syscall
 	
 	li $v0, 1 #Essa instrucao imprime na tela um inteiro
