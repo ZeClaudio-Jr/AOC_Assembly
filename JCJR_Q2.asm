@@ -23,9 +23,9 @@
 	j else #Caso contrario, pula para LABEL else
 	
 	if:
-	#No caso, sendo o resto igual a zero, o numero é par
+	#No caso, sendo o resto igual a zero, o numero Ã© par
 	li $v0, 4 #Instrucao que ler string
-	la $a0, par #A string PAR é guardada no registrador $a0
+	la $a0, par #A string PAR Ã© guardada no registrador $a0
 	syscall
 		
 	#Encerrando o programa
@@ -38,7 +38,7 @@
 	la $a0, impar #A string impar eh passada para o registrador $a0.
 	syscall
 		
-	 #Encerramento do programa
+	#Encerramento do programa
 	li $v0, 10
 	syscall
 	
