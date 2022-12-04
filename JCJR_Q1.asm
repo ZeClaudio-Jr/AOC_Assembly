@@ -15,7 +15,7 @@
 main:	#Facultativa sua escrita
 
     	# Exibicao do "dividendo"
-    	la $a0, dividendo #indicar o endereçoonde está a mensagem
+    	la $a0, dividendo #indicar o endereço onde está a mensagem
     	li $v0, 4 #Instrução para impressão de string
     	syscall #Faça!
     	
@@ -27,7 +27,7 @@ main:	#Facultativa sua escrita
 	move $t0, $v0	#$v0 sendo movido para um registrador temporario ($t0) para ser salvo
 	
     	# Exibicao do "divisor"
-    	la $a0, divisor #indicar o endereçoonde está a mensagem
+    	la $a0, divisor #indicar o endereço onde está a mensagem
    	li $v0, 4 #Sera impressa na tela uma string
    	syscall #Faça!
    	
