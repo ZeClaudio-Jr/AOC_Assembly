@@ -6,8 +6,8 @@
 
 .data	#Área para dados da memória principal. Especificação/declaração de variáveis.
 
-	quociente: .asciiz "\nQuociente = "	#O "\n" significa uma quebra de linha. O ".asciiz" serve para uma cadeia de caracteres
-	resto: .asciiz "\nResto = "	#O "\n" significa uma quebra de linha. O ".asciiz" serve para uma cadeia de caracteres
+	quociente: .asciiz "\nQuociente = " #O "\n" significa uma quebra de linha. O ".asciiz" serve para uma cadeia de caracteres
+	resto: .asciiz "\nResto = " #O "\n" significa uma quebra de linha. O ".asciiz" serve para uma cadeia de caracteres
 	dividendo: .asciiz "Digite o dividendo: " #O ".asciiz" serve para uma cadeia de caracteres
 	divisor: .asciiz "Digite o divisor: " #O ".asciiz" serve para uma cadeia de caracteres
 
