@@ -1,15 +1,26 @@
-# Depois de desenvolver o algoritmo que calcula o resto de uma divisao, utilize-o como procedimento para um programa que verifica se um numero eh par ou impar.
-
-.data
-
-	par: .asciiz "\nPar"
-	impar: .asciiz "\nImpar"
+#Depois de desenvolver o algoritmo que calcula o resto de uma divisao, utilize-o como procedimento para um programa que verifica se um numero eh par ou impar.
+#Entrada: Corresponde a um número inteiro positivo.
+#Saída: Para cada caso, mostre uma mensagem indicando se o número é ímpar ou par. 
+#Exemplo de entrada: 13. Saída correspondente: Impar
 
 
-.text
+
+.data #Área para dados da memória principal. Especificação/declaração de variáveis.
+
+	num: .asciiz "Digite um numero: " #O "\n" significa uma quebra de linha. O ".asciiz" serve para uma cadeia de caracteres
+	par: .asciiz "\nPar" #O "\n" significa uma quebra de linha. O ".asciiz" serve para uma cadeia de caracteres
+	impar: .asciiz "\nImpar" #O "\n" significa uma quebra de linha. O ".asciiz" serve para uma cadeia de caracteres
+	
+
+.text #Área para as instruções do programa. Local onde vamos colocar as instruções em si.
+
+	# Exibicao da mensagem "num"
+    	la $a0, num #indicar o endereço onde está a mensagem
+    	li $v0, 4 #Instrução para impressão de string
+    	syscall #Faça!
 
 	li $v0, 5 #Instrucao para ler um numero inteiro
-	syscall
+	syscall #Faça!
 	
 	#Como o valor $v0 sera usado depois, para que esse valor nao seja perdido, devera ser movido(salvo) para o registrador $a0.
 	move $a0, $v0 
@@ -26,21 +37,21 @@
 	#No caso, sendo o resto igual a zero, o numero é par
 	li $v0, 4 #Instrucao que ler string
 	la $a0, par #A string PAR é guardada no registrador $a0
-	syscall
+	syscall #Faça!
 		
 	#Encerrando o programa
 	li $v0, 10 
-	syscall
+	syscall #Faça!
 	
 	else:
 	#O numero eh impar quando o resto nao eh igual a zero
 	li $v0, 4 #Instrucao para imprimir string
 	la $a0, impar #A string impar eh passada para o registrador $a0.
-	syscall
+	syscall #Faça!
 		
 	#Encerramento do programa
 	li $v0, 10
-	syscall
+	syscall #Faça!
 	
 	resto_div:
 	move $v0, $a0 #Inicialmente, o "resto" recebe o valor do "dividendo".Depois ele sera o retorno da funcao, o registrador $v0.
@@ -59,4 +70,4 @@
 		
 	exit_while: #Saida do loop
 		
-	jr $ra
+	jr $ra #Endereço de retorno da função
