@@ -15,25 +15,25 @@
 main:	#Facultativa sua escrita
 
     	# Exibicao do "dividendo"
-    	la $a0, dividendo
-    	li $v0, 4
-    	syscall
+    	la $a0, dividendo #indicar o endereçoonde está a mensagem
+    	li $v0, 4 #Instrução para impressão de string
+    	syscall #Faça!
     	
 	#Lendo o valor "dividendo":
-	li $v0, 5 #Instrucao(li-5) que le o inteiro digitado
-	syscall
+	li $v0, 5 #Instrucao(li->5) que le o inteiro digitado
+	syscall #Faça!
 	
 	#Como o valor $v0 sera usado depois, para que esse valor nao seja perdido, devera ser movido(salvo) para o registrador temporario $t0.
 	move $t0, $v0	#$v0 sendo movido para um registrador temporario ($t0) para ser salvo
 	
     	# Exibicao do "divisor"
-    	la $a0, divisor
-   	li $v0, 4
-   	syscall
+    	la $a0, divisor #indicar o endereçoonde está a mensagem
+   	li $v0, 4 #Sera impressa na tela uma string
+   	syscall #Faça!
    	
 	#Lendo o valor "divisor":
 	li $v0, 5 #Instrucao(li-5) que le o inteiro digitado
-	syscall
+	syscall #Faça!
 	   	
 	#Como o valor $v0 sera usado depois, para que esse valor nao seja perdido, devera ser movido(salvo) para o registrador temporario $t1(o $t0 já foi usado).
 	move $t1, $v0	#$v0 sendo movido para um registrador temporario ($t1)
@@ -53,24 +53,24 @@ main:	#Facultativa sua escrita
 		j while #Aqui acontece o retorno para o inicio do loop
 		
 		
-	exit_while:  #Nessa posicao, o loop eh finalizado
+	exit_while: #Nessa posicao, o loop eh finalizado
 	
-	li $v0, 4  #Sera impressa na tela uma string
-	la $a0, quociente  #Necessariamente, a string tem que estar no registrador $a0 para a impressao. A string da variavel quociente eh passada para esse registrador
-	syscall
+	li $v0, 4 #Sera impressa na tela uma string
+	la $a0, quociente  #indicar o endereço onde está a mensagem. Necessariamente, a string tem que esta no registrador $a0 para a impressao. A string da variavel quociente eh passada para esse registrador
+	syscall #Faça!
 	
 	li $v0, 1 #Essa instrucao imprime na tela um inteiro
 	move $a0, $s1 #O inteiro para ser impresso deve estar em $a0. Aqui o quociente ($s1) eh enviado para $a0.
-	syscall
+	syscall #Faça!
 	
 	#Mesmo processo para imprimir o resto
 	li $v0, 4  #Sera impressa na tela uma string
-	la $a0, resto
-	syscall
+	la $a0, resto #Indica o endereço onde está a mensagem.
+	syscall #Faça!
 	
-	li $v0, 1
-	move $a0, $s0
-	syscall
+	li $v0, 1 #Sera impressa na tela um inteiro
+	move $a0, $s0 #Aqui o resistrador $s0 será gravado em $a0.
+	syscall #Faça!
 	
 	#Encerramento do programa
 	li $v0, 10
