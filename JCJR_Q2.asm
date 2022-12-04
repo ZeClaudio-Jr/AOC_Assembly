@@ -15,7 +15,7 @@
 .text #Área para as instruções do programa. Local onde vamos colocar as instruções em si.
 
 	# Exibicao da mensagem "num"
-    	la $a0, num #indicar o endereço onde está a mensagem
+    	la $a0, num #Indica o endereço onde está a mensagem
     	li $v0, 4 #Instrução para impressão de string
     	syscall #Faça!
 
