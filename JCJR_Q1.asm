@@ -1,14 +1,18 @@
-#Escreva um algoritmo que calcule a divisao inteira e o resto da divisao de dois numeros.
+# Escreva um algoritmo que calcule a divisao inteira e o resto da divisao de dois numeros.
+# Entrada: Ler dois números inteiros positivos correspondentes ao dividendo e o divisor.
+# Saída: Consiste no resultado da divisão inteira, (quociente) e o resto da divisão: Exemplo de entrada: 10, 3. Saída correspondente: Quociente = 3; Resto = 1
 
-.data	#Parte na qual se declara as variaveis
 
-	quociente: .asciiz "\nQuociente = "	#O "\n" significa uma quebra de linha
-	resto: .asciiz "\nResto = "	#O "\n" significa uma quebra de linha
-	dividendo: .asciiz "Digite o dividendo: "
-	divisor: .asciiz "Digite o divisor: "
 
-.text	
-main:
+.data	#Área para dados da memória principal. Especificação/declaração de variáveis.
+
+	quociente: .asciiz "\nQuociente = "	#O "\n" significa uma quebra de linha. O ".asciiz" serve para uma cadeia de caracteres
+	resto: .asciiz "\nResto = "	#O "\n" significa uma quebra de linha. O ".asciiz" serve para uma cadeia de caracteres
+	dividendo: .asciiz "Digite o dividendo: " #O ".asciiz" serve para uma cadeia de caracteres
+	divisor: .asciiz "Digite o divisor: " #O ".asciiz" serve para uma cadeia de caracteres
+
+.text	 #Área para as instruções do programa. Local onde vamos colocar as instruções em si.
+main:	#Facultativa sua escrita
 
     	# Exibicao do "dividendo"
     	la $a0, dividendo
